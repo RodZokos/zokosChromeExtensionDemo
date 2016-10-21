@@ -1,0 +1,81 @@
+body {
+	cursor: pointer;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/**:hover {
+	background: pink !important;
+}*/
+
+.primaryButton {
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 7px 0px;
+    text-decoration: none;
+    outline: 0;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: #54CDC0;
+    border-bottom: 2px solid rgba(72, 174, 163, 0.59);
+}
+
+.primaryButton:active {
+    position: relative;
+    top: 1px;
+}
+
+.primaryButton:hover {
+    -moz-box-shadow: 0 1px 1px 0 #000;
+    -webkit-box-shadow: 0 1px 1px 0 #000;
+    box-shadow: 0 1px 1px 0 #000;
+    color: #F3FFFD;
+    transition: all 300ms;
+    opacity: 1;
+    background: #2a8a85;
+}
+
+.dangerButton {
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 17px;
+    border-radius: 5px;
+    text-decoration: none;
+    outline: 0;
+    padding: 7px 0px;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: #FA6A75;
+    border-bottom: 2px solid rgba(213, 85, 96, 0.87);
+}
+
+.dangerButton:active {
+    position: relative;
+    top: 1px;
+}
+
+.dangerButton:hover {
+    -moz-box-shadow: 0 1px 1px 0 #000;
+    -webkit-box-shadow: 0 1px 1px 0 #000;
+    box-shadow: 0 1px 1px 0 #000;
+    color: #F3FFFD;
+    transition: all 300ms;
+    opacity: 1;
+    background: #D34D58;
+}
