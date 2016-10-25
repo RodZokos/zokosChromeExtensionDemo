@@ -21,6 +21,9 @@ function resetScript() {
     $(document.body).off('mouseenter', 'img', hoverImage);
     $(document.body).off('mouseenter', 'a > img', hoverImage);
     $(document.body).off('mouseenter', 'div > img', hoverImage);
+    $(document.body).off('mouseenter', 'video', hoverVideo);
+    $(document.body).off('mouseenter', 'a > video', hoverVideo);
+    $(document.body).off('mouseenter', 'div > video', hoverVideo);
     $(document.body).off('click', stopPropagation)
 }
 
@@ -61,36 +64,36 @@ function hoverImage(event) {
                 // Set dialogue box check to true
             activatedImageOverlay = true;
             $('<div id="chromeExtensionUploadDetailsContainer" />').html(`
-                	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-                	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-                	<div style="font-family: 'Roboto', sans-serif;">
-                	<div style="position: absolute; height: 73px; width: 100%; z-index: -1; top: 0px; left: 0px; background: #4DB6AB; border-radius: 10px 10px 0px 0px;"> </div>
+                    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+                    <div style="font-family: 'Roboto', sans-serif;">
+                    <div style="position: absolute; height: 73px; width: 100%; z-index: -1; top: 0px; left: 0px; background: #4DB6AB; border-radius: 10px 10px 0px 0px;"> </div>
                 <div style="font-size: 2em; text-align: center; padding-bottom: 14px; height: 50px; color: #fff; padding: 20px; padding-top: 0px;"> Zokos File Upload </div>
-               	<img style="display: block; margin-left: auto; padding: 8px; margin-right: auto; max-width: 600px; max-height: 400px; border-radius: 5px" src=` + img[0].currentSrc + `>
-        	 	<div style="padding: 20px;">
-        	 	<div style="text-align: center; display: none;" id="loadingStartUploadExtension">
-        	 	<i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="color: #54cdc0"></i>
-				<div style="margin-top: 10px;">Uploading file...</div>
-        	 	 </div>
+                <img style="display: block; margin-left: auto; padding: 8px; margin-right: auto; max-width: 600px; max-height: 400px; border-radius: 5px" src=` + img[0].currentSrc + `>
+                <div style="padding: 20px;">
+                <div style="text-align: center; display: none;" id="loadingStartUploadExtension">
+                <i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="color: #54cdc0"></i>
+                <div style="margin-top: 10px;">Uploading file...</div>
+                 </div>
 
 
-        	 	<div id="imageUploadOptionsContainer">
-        	 	<div style="text-align: center">
-        	 	<span> Image Name: </span> <input id="imageNameUploadInput" value="Example Image" placeholder="Image name" style="margin-left: 5px; border: solid 1px #b3b3b3; background: white; color: black; border-radius: 8px; width: 200px; outline: none; padding: 8px;" type="text" />
-        	 	</div>
-        	 	<div style="text-align: center; margin-top: 10px;">
-        	 	<div id="uploadClickSubmitButton" class="primaryButton">Upload</div>
-        	 	<div id="dangerClickCancelButton" class="dangerButton" style="margin-left: 20px;">Cancel</div>
-        	 	</div>
-        	 	</div>
+                <div id="imageUploadOptionsContainer">
+                <div style="text-align: center">
+                <span> Image Name: </span> <input id="imageNameUploadInput" value="Example Image" placeholder="Image name" style="margin-left: 5px; border: solid 1px #b3b3b3; background: white; color: black; border-radius: 8px; width: 200px; outline: none; padding: 8px;" type="text" />
+                </div>
+                <div style="text-align: center; margin-top: 10px;">
+                <div id="uploadClickSubmitButton" class="primaryButton">Upload</div>
+                <div id="dangerClickCancelButton" class="dangerButton" style="margin-left: 20px;">Cancel</div>
+                </div>
+                </div>
 
-        	 	<div id="uploadedSuccessfullyOptionsContainer" style="text-align: center; display: none;">
-        	 	<div> Uploaded succesfully! </div>
-        	 	<div id="dangerClickCloseButton" class="dangerButton" style="margin-top: 10px;">Close</div>
-        	 	</div> 
-        	 	</div>
-        	 	</div>
-        	 	`).css({
+                <div id="uploadedSuccessfullyOptionsContainer" style="text-align: center; display: none;">
+                <div> Uploaded succesfully! </div>
+                <div id="dangerClickCloseButton" class="dangerButton" style="margin-top: 10px;">Close</div>
+                </div> 
+                </div>
+                </div>
+                `).css({
                 'max-height': '1000px',
                 'max-width': '600px',
                 'background-color': 'white',
@@ -104,7 +107,6 @@ function hoverImage(event) {
             }).insertBefore($(document.body));
 
             document.getElementById('uploadClickSubmitButton').onclick = function() {
-            	console.log(img[0].currentSrc);
                 uploadFile(img[0].currentSrc);
             };
 
@@ -123,7 +125,6 @@ function hoverImage(event) {
 function hoverVideo(event) {
     if (!activatedImageOverlay) {
         var img = $(this);
-        console.log(img);
         // Create element
         var elem = document.getElementById("overlayImageUploadExtension");
         if (elem) {
@@ -166,47 +167,47 @@ function hoverVideo(event) {
                     document.getElementById("dangerClickCancelButton").style.marginTop = "-10px";
                 }, 20);
                 videoHtml = `<div style="margin-top: 25px; text-align: center; font-weight: bold;"> Video type is not currently supported</div>
-                    	 <div style="margin-top: 5px; text-align: center;">Type will be supported soon</div>`
+                         <div style="margin-top: 5px; text-align: center;">Type will be supported soon</div>`
             } else {
                 videoSource = img[0].currentSrc + '#video';
                 videoHtml = `<video style="display: block; margin-left: auto; margin-right: auto; margin-top: 15px; max-width: 540px; max-height: 300px; border-radius: 5px" controls>
-               			<source src="` + img[0].currentSrc + `" type="video/mp4">
-						Your browser does not support the video tag.
-						</video>`
+                        <source src="` + img[0].currentSrc + `" type="video/mp4">
+                        Your browser does not support the video tag.
+                        </video>`
             }
             // Set dialogue box check to true
             activatedImageOverlay = true;
             $('<div id="chromeExtensionUploadDetailsContainer" />').html(`
-                	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-                	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-                	<div style="font-family: 'Roboto', sans-serif;">
-                	<div style="position: absolute; height: 73px; width: 100%; z-index: -1; top: 0px; left: 0px; background: #4DB6AB; border-radius: 10px 10px 0px 0px;"> </div>
+                    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+                    <div style="font-family: 'Roboto', sans-serif;">
+                    <div style="position: absolute; height: 73px; width: 100%; z-index: -1; top: 0px; left: 0px; background: #4DB6AB; border-radius: 10px 10px 0px 0px;"> </div>
                 <div style="font-size: 2em; text-align: center; padding-bottom: 14px; height: 50px; color: #fff; padding: 20px; padding-top: 0px;"> Zokos File Upload </div> 
                 ` + videoHtml + `
-        	 	<div style="padding: 20px;">
-        	 	<div style="text-align: center; display: none;" id="loadingStartUploadExtension">
-        	 	<i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="color: #54cdc0"></i>
-				<div style="margin-top: 10px;">Uploading file...</div>
-        	 	 </div>
+                <div style="padding: 20px;">
+                <div style="text-align: center; display: none;" id="loadingStartUploadExtension">
+                <i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="color: #54cdc0"></i>
+                <div style="margin-top: 10px;">Uploading file...</div>
+                 </div>
 
 
-        	 	<div id="imageUploadOptionsContainer">
-        	 	<div style="text-align: center" id="imageNameInputContainerExtension">
-        	 	<span> Image Name: </span> <input id="imageNameUploadInput" value="Example Video" placeholder="Image name" style="margin-left: 5px; padding: 8px; border: solid 1px #b3b3b3; background: white; color: black; border-radius: 8px; width: 200px; outline: none;" type="text" />
-        	 	</div>
-        	 	<div style="text-align: center; margin-top: 10px;">
-        	 	<div id="uploadClickSubmitButton" class="primaryButton">Upload</div>
-        	 	<div id="dangerClickCancelButton" class="dangerButton" style="margin-left: 20px;">Cancel</div>
-        	 	</div>
-        	 	</div>
+                <div id="imageUploadOptionsContainer">
+                <div style="text-align: center" id="imageNameInputContainerExtension">
+                <span> Image Name: </span> <input id="imageNameUploadInput" value="Example Video" placeholder="Image name" style="margin-left: 5px; padding: 8px; border: solid 1px #b3b3b3; background: white; color: black; border-radius: 8px; width: 200px; outline: none;" type="text" />
+                </div>
+                <div style="text-align: center; margin-top: 10px;">
+                <div id="uploadClickSubmitButton" class="primaryButton">Upload</div>
+                <div id="dangerClickCancelButton" class="dangerButton" style="margin-left: 20px;">Cancel</div>
+                </div>
+                </div>
 
-        	 	<div id="uploadedSuccessfullyOptionsContainer" style="text-align: center; display: none;">
-        	 	<div> Uploaded succesfully! </div>
-        	 	<div id="dangerClickCloseButton" class="dangerButton" style="margin-top: 10px;">Close</div>
-        	 	</div> 
-        	 	</div>
-        	 	</div>
-        	 	`).css({
+                <div id="uploadedSuccessfullyOptionsContainer" style="text-align: center; display: none;">
+                <div> Uploaded succesfully! </div>
+                <div id="dangerClickCloseButton" class="dangerButton" style="margin-top: 10px;">Close</div>
+                </div> 
+                </div>
+                </div>
+                `).css({
                 'max-height': '1000px',
                 'max-width': '600px',
                 'background-color': 'white',
@@ -236,11 +237,7 @@ function hoverVideo(event) {
 }
 
 function uploadFile(source) {
-    var formData = new FormData();
     var xhr = new XMLHttpRequest();
-    var form = document.createElement("form");
-    form.setAttribute("method", 'asdfdsaf');
-    form.setAttribute("action", 'safsdaf');
 
     document.getElementById('loadingStartUploadExtension').style.display = "block";
     document.getElementById('imageUploadOptionsContainer').style.display = "none";
@@ -270,7 +267,6 @@ function uploadFile(source) {
 
     var xhrString = "name=" + imageNameUploadInput.value + "&src=" + source;
 
-    console.log(xhrString);
     xhr.send(xhrString);
 }
 
@@ -310,7 +306,7 @@ function create() {
         // On mouseenter for <> tags with an img child highlight img tag in question, also prevent click events on a tags when extension is active 
         $(document.body).on('mouseenter', 'div > video', hoverVideo);
 
-        $('#ifram').load(function() {
+        $('#iframe').load(function() {
             $(this).height($(this).contents().height());
             $(this).width($(this).contents().width());
         });
