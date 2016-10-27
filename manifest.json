@@ -13,9 +13,11 @@
     "browser_action": {
         "default_title": "Upload something!"
     },
+    "options_page": "options/options.html",
     "permissions": [
         "https://*/*",
         "http://*/*",
-        "tabs"
+        "tabs",
+        "storage"
     ]
 }

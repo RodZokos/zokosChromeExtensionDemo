@@ -1,0 +1,161 @@
+.loginGradientBackground {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(77, 182, 171, 1) 5%, rgba(0, 128, 128, .6) 100%);
+}
+
+.loginForm {
+    position: absolute;
+    left: Calc(50% - 200px);
+    top: Calc(48% - 220px);
+}
+
+.logo {
+    position: absolute;
+    z-index: 10;
+    top: 0px;
+    padding: 16px 0px 0px 41px;
+    width: 137px;
+}
+
+.forgotPasswordTitle {
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 19px;
+}
+
+.forgotPasswordLink {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+.signupLink:hover {
+    text-decoration: underline;
+}
+
+
+/* Image will take the size of the container. Change margin if required.*/
+
+.logo > a > img {
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+}
+
+
+/* The login container */
+
+.loginTitle {
+    font-weight: normal
+}
+
+.login {
+    width: 400px;
+    margin: 0 auto;
+    padding: 40px 40px 35px 40px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    border-top: 3px solid #00baff;
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* Login header */
+
+.login > h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #00262a;
+}
+
+
+/* Login fields */
+
+.login input {
+    font-size: 14px;
+    font-family: Bitter;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline-style: none;
+    border: 1px solid #42e9ff;
+    padding-left: 50px;
+    padding-right: 20px 0;
+}
+
+.login input#username {
+    background: #fff url('https://i.imgur.com/UZ2wEYU.png') no-repeat;
+    background-position: 5px 0px;
+    background-size: 40px;
+}
+
+.login input#username:focus {
+    background: #fff url('https://i.imgur.com/UZ2wEYU.png') no-repeat;
+    background-position: 5px -35px;
+    background-size: 40px;
+}
+
+.login input#password {
+    background: #fff url('https://i.imgur.com/tjMJ9gk.png') no-repeat;
+    background-position: 5px 0px;
+    background-size: 40px;
+}
+
+.login input#password:focus {
+    background: #fff url('https://i.imgur.com/tjMJ9gk.png') no-repeat;
+    background-position: 5px -35px;
+    background-size: 40px;
+}
+
+.login input {
+    transition: all 200ms;
+}
+
+.login button {
+    width: 100%;
+    height: 40px;
+    background: #00AFF0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    color: #00262a;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.login button:hover,
+button:focus {
+    background: #00AFF0;
+    color: #16545c;
+}
+
+.loginLinkButton {
+    width: 100px;
+    padding: 6px;
+    display: inline-block;
+    border: solid 2px #00AFF0;
+    background: #00AFF0;
+    color: #fff;
+    border-radius: 3px 0px 0px 3px;
+    cursor: pointer;
+}
+
+.signupLinkButton {
+    width: 100px;
+    padding: 6px;
+    display: inline-block;
+    border: solid 2px #00AFF0;
+    background: inherit;
+    margin-left: -7px;
+    border-radius: 0px 3px 3px 0px;
+    cursor: pointer;
+}
